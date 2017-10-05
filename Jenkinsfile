@@ -10,7 +10,7 @@ node {
         withMaven(maven: 'Maven 3.3') {
 
             // Run the maven build
-            sh "mvn clean package"
+            sh "mvn clean compile"
         }
     }
 
