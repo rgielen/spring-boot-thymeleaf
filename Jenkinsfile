@@ -24,6 +24,7 @@ pipeline {
                 docker { image 'markhobson/maven-chrome' }
             }
             steps {
+                sh 'env'
                 sh 'mvn verify'
             }
             post {
