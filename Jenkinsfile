@@ -1,18 +1,21 @@
 #!groovy
 pipeline {
-    agent none
-
+    agent any
+    tools {
+        maven 'Maven 3.3'
+    }
     stages {
         stage('Checkout') {
-            checkout scm
-            // git url: 'https://github.com/rgielen/spring-boot-thymeleaf.git'
+            steps {
+                checkout scm
+                // git url: 'https://github.com/rgielen/spring-boot-thymeleaf.git'
+            }
         }
 
         stage('Build') {
-            withMaven(maven: 'Maven 3.3') {
-
+            steps {
                 // Run the maven build
-                sh "mvn clean compile"
+                sh 'mvn clean compile'
             }
         }
 
