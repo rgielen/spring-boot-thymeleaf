@@ -25,7 +25,10 @@ pipeline {
             }
             steps {
                 sh 'env'
-                sh 'mvn verify'
+                sh '''  
+                        unset M2_HOME
+                        mvn verify
+                   '''
             }
             post {
                 success {
