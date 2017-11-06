@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import pl.codeleak.selenium.support.SeleniumTest;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -29,8 +31,8 @@ public class HomeControllerTest {
     private HomePage homePage;
 
     @BeforeClass
-    public static void init() {
-        driver = new RemoteWebDriver(DesiredCapabilities.firefox());
+    public static void init() throws MalformedURLException {
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
     }
     
     @Before
