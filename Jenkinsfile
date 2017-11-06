@@ -21,7 +21,7 @@ pipeline {
 
         stage('Acceptance Test') {
             agent {
-                docker { image 'rgielen/selenium-firefox-maven' }
+                docker { image 'cloudbees/java-build-tools' }
             }
             steps {
                 sh 'env'
