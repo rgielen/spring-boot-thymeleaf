@@ -21,7 +21,7 @@ pipeline {
 
         stage('Acceptance Test') {
             agent {
-                docker { image 'markhobson/maven-chrome' }
+                docker { image 'rgielen/selenium-firefox-maven' }
             }
             steps {
                 sh 'env'
